@@ -5,9 +5,17 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static struct termios 	old;
-static struct termios	termios_p;
-static int				size_x;
+typedef	struct 					s_line
+{
+	char						*line;
+	int							size;
+	int							allocated_size;
+}								t_line;
+
+struct termios 	old;
+struct termios	termios_p;
+int				size_x;
+t_line			g_line;
 
 int putonterm(int c);
 
